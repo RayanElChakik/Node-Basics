@@ -40,6 +40,9 @@ function onDataReceived(text) {
   else if(text === 'hello\n'){
     hello();
   }
+  else if(text === 'help\n'){
+    help();
+  }
   else{
     unknownCommand(text);
   }
@@ -77,6 +80,12 @@ function quit(){
   console.log('Quitting now, goodbye!')
   process.exit();
 }
-
+// Help Function
+function help(){
+  console.log('-hello --> Display hello to user');
+  console.log('-unknown error --> Display unknown if command not found');
+  console.log('-hellp --> Provides help');
+  console.log('-exit or quit --> Exit or quit the application');
+}
 // The following line starts the application
 startApp("Rayan El Chakik")
