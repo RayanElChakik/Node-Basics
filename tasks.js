@@ -114,7 +114,10 @@ function unknownCommand(c){
   var index = Number(taskR);
   if(isNaN(index)){
    tasksList.splice(tasksList.length-1,1);
-  }else {
+  }else if(index >tasksList.length){
+    console.log("You entered a task number that doesn't exist")
+    return
+  }else{
    tasksList.splice(index-1,1);
  }
  console.log("Your task have been deleted. Check the new upadted list if u want!")
