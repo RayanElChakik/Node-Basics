@@ -88,10 +88,11 @@ function quit(){
  * @returns {void}
  */
 function help(){
-  console.log('-hello --> Display hello to user' + '\n' +
-  '-unknown error --> Display unknown if command not found' + '\n' +
-  '-help --> Provides help'+ '\n' +
-  '-exit or quit --> Exit or quit the application');
+  console.log('--hello --> Display hello to user' + '\n' +
+  '--hello ${text} --> If u add your rname or any text after the hello it will be displayed' + '\n' +
+  '--unknown error --> Display unknown if command not found' + '\n' +
+  '--help --> Provides help with all possible commands'+ '\n' +
+  '--exit or quit --> Exit or quit the application');
 }
 // The following line starts the application
 startApp("Rayan El Chakik")
