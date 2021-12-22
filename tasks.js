@@ -140,7 +140,10 @@ function help(){
   '--hello ${text} --> If u add your rname or any text after the hello it will be displayed' + '\n' +
   '--unknown error --> Display unknown if command not found' + '\n' +
   '--help --> Provides help with all possible commands'+ '\n' +
-  '--exit or quit --> Exit or quit the application');
+  '--exit or quit --> Exit or quit the application' +'\n' +
+  '--add --> Type add "Task_name" if you want to add a new task to the exisiting list' + '\n' +
+  '--remove --> remove (without anything) should remove the last task from the existing list' + '\n' +
+  '--remove nb --> removes the nb of element you enetred from the existing list' + '\n' );
 }
 // The following line starts the application
 startApp("Rayan El Chakik")
