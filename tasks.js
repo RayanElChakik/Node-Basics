@@ -80,12 +80,16 @@ function quit(){
   console.log('Quitting now, goodbye!')
   process.exit();
 }
-// Help Function
+/**
+ * Help Command that displays all possible commands 
+ *
+ * @returns {void}
+ */
 function help(){
-  console.log('-hello --> Display hello to user');
-  console.log('-unknown error --> Display unknown if command not found');
-  console.log('-hellp --> Provides help');
-  console.log('-exit or quit --> Exit or quit the application');
+  console.log('-hello --> Display hello to user' + '\n' +
+  '-unknown error --> Display unknown if command not found' + '\n' +
+  '-help --> Provides help'+ '\n' +
+  '-exit or quit --> Exit or quit the application');
 }
 // The following line starts the application
 startApp("Rayan El Chakik")
