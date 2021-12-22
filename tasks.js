@@ -41,6 +41,8 @@ function onDataReceived(text) {
   }
   else if(text === 'help\n'){
     help();
+  }else if(text.trim() === 'list' || text.trim()=== 'li'){
+    li();
   }
   else{
     unknownCommand(text);
@@ -72,6 +74,17 @@ function unknownCommand(c){
       console.log(`${name.trim()}!`)
    }
 }
+/**
+ * Display List 
+ *
+ * @returns {void}
+ */
+  var tasksList = ['Task_One', 'Task_Two', 'Task_Three'];
+  function li(){
+   for (var i = 0; i < tasksList.length; i++){
+   console.log(`${i+1}: ${tasksList[i]}`);
+   }
+ }
 
 /**
  * Exits the application
