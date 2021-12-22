@@ -43,6 +43,8 @@ function onDataReceived(text) {
     help();
   }else if(text.trim() === 'list' || text.trim()=== 'li'){
     li();
+  }else if(text.trim().split(" ")[0] === 'add'){
+    add(text)
   }
   else{
     unknownCommand(text);
@@ -85,6 +87,22 @@ function unknownCommand(c){
    console.log(`${i+1}: ${tasksList[i]}`);
    }
  }
+/**
+ * Adds a task to the list
+ *
+ * @returns {void}
+ */
+ function add(addTask){
+  if(addTask.trim().split(" ")[1] !== undefined){
+    tasksList.push(addTask.trim().split(" ")[1]);
+      console.log('Your task have been successively added to your list.')
+      for (var i = 0; i < tasksList.length; i++){
+        console.log(`${i+1}: ${tasksList[i]}`);
+        }
+    } else{
+      console.log('Error! Yoou Should add a task to the list.')
+    }
+}
 
 /**
  * Exits the application
