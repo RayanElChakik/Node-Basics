@@ -173,7 +173,10 @@ function help(){
   '--exit or quit --> Exit or quit the application' +'\n' +
   '--add --> Type add "Task_name" if you want to add a new task to the exisiting list' + '\n' +
   '--remove --> remove (without anything) should remove the last task from the existing list' + '\n' +
-  '--remove nb --> removes the nb of element you enetred from the existing list' + '\n' );
+  '--remove nb --> removes the nb of element you enetred from the existing list' + '\n'+
+  '--edit --> Throws an error since you shoould add the new text to replace' + '\n'+
+  '--edit new task --> edits the last element in the list with the new task name entered' + '\n'+ 
+  '--edit nb new task --> edits the indexed element you enetred with the new task name');
 }
 // The following line starts the application
 startApp("Rayan El Chakik")
