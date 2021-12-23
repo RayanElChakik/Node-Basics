@@ -47,6 +47,8 @@ function onDataReceived(text) {
     add(text)
   }else if(text.trim().split(" ")[0] === 'remove'){
     remove(text.trim().split(" ")[1]);
+  }else if(text.trim().split(" ")[0] === 'edit'){
+    edit(text);
   }
   else{
     unknownCommand(text);
@@ -122,7 +124,32 @@ function unknownCommand(c){
  }
  console.log("Your task have been deleted. Check the new upadted list if u want!")
 }
-
+/**
+   * Apply edits to the lists in the application
+   *
+   * @returns {void}
+   */
+ function edit(taskEdit){
+  task = taskEdit.trim().split(" ");
+  var index = Number(task[1]);
+    if(index> tasksList.length){
+      console.log('Error! Such index is not found please try Again.')
+    }else if (task[1] === undefined){
+      console.log('Error! No entries to edit please enter a valid number or a list string!')
+      return
+    }else if (isNaN(task[1])){
+     tasksList.splice(tasksList.length-1,1,taskEdit.trim().substring(4));
+     console.log('Edits have been changed! Check your updated list')
+    }else{
+      if (task[2] ===undefined ){
+        console.log('Error! Index found, but no text to be replaced')
+      }else{
+        tasksList.splice(index-1,1,taskEdit.trim().substring(7));
+     console.log('Edits have been changed! Check your updated list')
+      }
+     
+    }
+ }
 
 /**
  * Exits the application
