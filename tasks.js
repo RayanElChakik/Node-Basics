@@ -240,7 +240,9 @@ function help(){
   '--remove nb --> removes the nb of element you enetred from the existing list' + '\n'+
   '--edit --> Throws an error since you shoould add the new text to replace' + '\n'+
   '--edit new task --> edits the last element in the list with the new task name entered' + '\n'+ 
-  '--edit nb new task --> edits the indexed element you enetred with the new task name');
+  '--edit nb new task --> edits the indexed element you enetred with the new task name' + '\n'+ 
+  '--check nb_task --> Checks the task index' + '\n'+ 
+  '--uncheck nb_task --> Uncheck the task index');
 }
 // The following line starts the application
 startApp("Rayan El Chakik")
