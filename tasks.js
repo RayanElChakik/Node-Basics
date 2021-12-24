@@ -20,9 +20,10 @@ function startApp(name){
 var tasksList = [
   {doneStatus: 'true', task:'Finish Codi Task'},
   {doneStatus: 'false', task:'English HW'},
-  {doneStatus: 'true', task:'Submit Weather API'}
+  {doneStatus: 'true',  task:'Submit Weather API'},
+  {doneStatus: 'false', task:'Start MOVIE-DB'},
+  {doneStatus: 'false', task:'Finish ES6'}
 ];
-
 /**
  * Decides what to do depending on the data that was received
  * This function receives the input sent by the user.
@@ -220,10 +221,36 @@ function edit(taskEdit){
  *
  * @returns {void}
  */
-function quit(){
-  console.log('Quitting now, goodbye!')
-  process.exit();
+// function quit(){
+//   console.log('Quitting now, goodbye!')
+//   process.exit();
+// }
+var fs = require("fs"); 
+var fileName = 'database.json';
+let getData = JSON.parse(fs.readFileSync(fileName));
+console.log(getData)
+let info = Object.values(getData);
+info.forEach((value) => {
+  tasksList = Object.values(info);
+});
+
+function quit() {
+  console.log("Quitting now, goodbye!");
+  try {
+    var fs = require("fs");
+    const ObjectJson = Object.assign({}, tasksList);
+    fs.writeFile(fileName, JSON.stringify(ObjectJson), function writeJSON(err) {
+      if (err) console.log(err);
+      console.log(`Data have been saved and replaced in ${fileName}`);
+      process.exit();
+    });
+  } catch (error) {
+    console.error('Error! Data not saved!');
+  }
 }
+
+
+
 /**
  * Help Command that displays all possible commands 
  *
@@ -244,5 +271,6 @@ function help(){
   '--check nb_task --> Checks the task index' + '\n'+ 
   '--uncheck nb_task --> Uncheck the task index');
 }
+
 // The following line starts the application
 startApp("Rayan El Chakik")
